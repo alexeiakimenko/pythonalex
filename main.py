@@ -603,7 +603,7 @@
 # print(r.randint(0, 5))
 # print(r.randrange(6, 16, 2))
 
-from random import *  # подключение отдельной функции из модуля.import.* всех функций
+# from random import *  # подключение отдельной функции из модуля.import.* всех функций
 
 # print(randint(0, 5))
 # print(randrange(6, 12, 2))
@@ -629,7 +629,8 @@ from random import *  # подключение отдельной функции
 # print(min(lst))
 # print(max(lst))
 # print(sum(lst))
-from random import randint
+# from random import randint
+
 
 # lst = [randint(0, 100) for i in range(10)]
 # print(lst)
@@ -752,4 +753,172 @@ from random import randint
 #     if mn > m[k][k]:
 #         mn = m[k][k]
 # print(mn)
-print("Hello")
+# print("Hello")
+
+# import math
+
+# num1 = math.e
+# num2 = math.ceil(3.2)
+# num3 = math.floor(3.8)
+# num4 = math.sqrt(4)
+#
+# print(num1)
+# print(num2)
+# print(num3)
+# print(num4)
+# print(dir(math))
+# from math import sqrt
+#
+# num1 = sqrt(9)
+# print(num1)
+
+# import math as m
+# num1 = m.pi
+# print(num1)
+
+# from math import pi
+#
+# r = float(input("Введите радиус окружности: "))
+# print("Длина окружности:", round((2 * r * pi), 2))
+
+# import time
+
+# import locale
+#
+# locale.setlocale(locale.LC_ALL, "ru")
+#
+# t = time.time()
+# print(t)
+#
+# local = time.ctime()
+# print(local)
+#
+# res = time.localtime()
+# print(res)
+# print(res.tm_mday, ".0", res.tm_mon, ".", res.tm_year, sep="")
+# print(time.strftime("%d.%m.%Y"))
+# print(time.strftime("Сегодня: %B %d(%A). %Y."))
+# pause = 5
+# print("Begin")
+# time.sleep(pause)
+# print("End")
+
+# text = input("Название напоминания: ")
+# t = float(input("Через сколько минут: "))
+# t = t * 60
+# time.sleep(t)
+# print(text)
+
+# start = time.monotonic()
+# time.sleep(5)
+# finish = time.monotonic()
+# res = finish - start
+# print(res)
+
+
+# def hello(name):
+#     print("Hello,", name)
+#
+#
+# hello("Boris")
+# def get_sum(a, b):
+#     print("Sum")
+#     return a + b
+#
+#
+# x = 3
+# y = 6
+# res = get_sum(x, y)
+# print(res)
+
+# def symbol(count, a, b):
+#     for i in range(count):
+#         if i % 2 == 0:
+#             print(a, end="")
+#         else:
+#             print(b, end="")
+#
+#     print()
+#
+#
+# symbol(9, "+", "-")
+# symbol(7, "X", "0")
+# def mat(a, b):
+#     if a > b:
+#         return a - b
+#     if a <= b:
+#         return a + b
+#
+#
+# n1 = float(input("n1:"))
+# n2 = float(input("n2:"))
+# print(mat(n1, n2))
+
+# def cub(a):
+#     return a * a * a
+#
+#
+# for i in range(1,11):
+#     print(i ,"=", cub(i))
+
+# def change(lst):
+#     # lst[0], lst[-1] = lst[-1], lst[0]
+#     a = lst.pop()
+#     b = lst.pop(0)
+#     lst.append(b)
+#     lst.insert(0, a)
+#     return lst
+
+
+# print(change([1, 2, 3]))
+# print(change([9, 12, 33, 54, 105]))
+# print(change(["с", "л", "о", "н"]))
+# def func(x, y):
+#     if x > y:
+#         return True
+#     else:
+#         return False
+#
+#
+# print(func(10, 5))
+# print(func(5, 7))
+
+# def check_password(password):
+#     has_upper = False
+#     has_number = False
+#     has_lower = False
+#     for ch in password:
+#         if "A" <= ch <= "Z":
+#             has_upper = True
+#         elif "a" <= ch <= "z":
+#             has_lower = True
+#         elif "0" <= ch <= "9":
+#             has_number = True
+#     if len(password) >= 8 and has_upper and has_lower and has_number:
+#         return True
+#     return False
+#
+#
+# p = input("Введите пароль: ")
+# print(check_password(p))
+# if check_password(p):
+#     print("Это надёжный пароль.")
+# else:
+#     print("Это не надёжный пароль!")
+
+# def get_sum(a=0, b=0, c=0, d=0):
+#     return a + b + c + d
+#
+#
+# print(get_sum(1, 5, 2, 7))
+# print(get_sum(1, 5, 2))
+# print(get_sum(1, 5))
+# print(get_sum(1, 5, d=2))
+# print("result", get_sum(d=1, a=5), sep="&&")
+
+def display_info(name, age):
+    print("Name:", name, "\nAge:", age, end="\n\n")
+
+
+display_info("Ira", 23)
+display_info(age=23, name="Ira")
