@@ -916,9 +916,148 @@
 # print(get_sum(1, 5, d=2))
 # print("result", get_sum(d=1, a=5), sep="&&")
 
-def display_info(name, age):
-    print("Name:", name, "\nAge:", age, end="\n\n")
+# def display_info(name, age):
+#     print("Name:", name, "\nAge:", age, end="\n\n")
+#
+#
+# display_info("Ira", 23)
+# display_info(age=23, name="Ira")
+
+# def summa(a, b, c):
+#     sum = a + b + c
+#     avg = sum / 3
+#     return avg
+#
+#
+# a1 = summa(2, 5, 8)
+# print(a1 ** 2)
+
+# def digits_sum(n, even=True):
+#     s = 0
+#     while n > 0:
+#         cur_digit = n % 10
+#         if even and cur_digit % 2 == 0:
+#             s = s + cur_digit
+#     elif not even and cur_digit % 2:
+#     s = s + cur_digit
+#
+#
+# n = (n - cur_digit) / 10
+# return s
+#
+# print("Сумма чётных:")
+# print(digits_sum(9874023))
+# print(digits_sum(382271))
+# print(digits_sum(123456789))
+# print("Сумма нечётных:")
+# print(digits_sum(9874023, False)
+# print(digits_sum(382271, False)
+# print(digits_sum(123456789, False)
 
 
-display_info("Ira", 23)
-display_info(age=23, name="Ira")
+# lt2 = [1, 2, 3]
+# print(lt1 == lt2)
+# print(lt1 is lt2)
+# print(id(lt1))
+# print(id(lt2))
+# a = 2
+# b = 2
+# print(a == b)
+# print(a is b)
+# print(id(a))
+# print(id(b))
+
+# lt1 = [1, 2, 3]
+# print(id(lt1))
+# lt1.append(4)
+# print(id(lt1))
+# lt1.pop(1)
+# print(id(lt1))
+# lt1[1] = "Hello"
+
+# s = "Hello"
+# print(id(s))
+# s += "World"
+# print(id(s))
+
+# a = 5
+# print(id(a))
+# a = a + 1
+# print(id(a))
+
+# def add_number(n):
+#     print(n, "=", id(n))
+#     n1 = n + [4]
+#     print(n1, "=", id(n1))
+#
+#
+# x = [1, 2, 3]
+# print("x:", x, id(x))
+# add_number(x)
+# print("x:", x, id(x))
+
+# кортеж (tuple)
+# lst = [1, 2, 3]
+#
+# # print(lst.__sizeof__())
+# # print(tpl.__sizeof__())
+# print(type(tpl))
+# a = ()
+#
+# b = tuple()
+# print(type(b))
+# a = (1,)
+# print(a)
+# print(type(a))
+# b = tuple(("Hello"))
+# print(b)
+# print(type(b))
+# c = c + 4,
+# print(c)
+# tpl = (1, 2, 3, 5, 6, 7, 8, 9)
+# print(tpl)
+# print(tpl[2])
+# print(tpl[1:3])
+from random import randint
+
+
+# s = tuple(2 ** i for i in range(1, 13))
+# print(s)
+# t1 = tuple("hello")
+# t2 = tuple("world")
+# t3 = t1 + t2
+# print(t3)
+# print(t3 * 2)
+# print(len(t3))
+# print(t3.count("l"))
+# print(t3.index("l", 4))
+
+# def slicer(tpl, el):
+#     if el in tpl:
+#         if tpl.count(el) > 1:
+#             first = tpl.index(el)
+#             second = tpl.index(el, first + 1)
+#             return tpl[first:second + 1]
+#         else:
+#             return tpl[tpl.index(el):]
+#
+#     else:
+#         return ()
+#
+#
+# print(slicer((1, 2, 3), 8))
+# print(slicer((1, 8, 3, 4, 8, 8, 9, 2), 8))
+# print(slicer((1, 2, 8, 5, 1, 2, 9), 8))
+
+def tpl(n1, n2):
+    return tuple(randint(n1, n2) for _ in range(10))
+
+
+tl1 = tpl(0, 5)
+tl2 = tpl(-5, 0)
+
+print(tl1)
+print(tl2)
+tl3 = tl1 + tl2
+print(tl3)
+print(tl3.count(0))
