@@ -1020,7 +1020,6 @@
 # print(tpl[1:3])
 from random import randint
 
-
 # s = tuple(2 ** i for i in range(1, 13))
 # print(s)
 # t1 = tuple("hello")
@@ -1049,15 +1048,206 @@ from random import randint
 # print(slicer((1, 8, 3, 4, 8, 8, 9, 2), 8))
 # print(slicer((1, 2, 8, 5, 1, 2, 9), 8))
 
-def tpl(n1, n2):
-    return tuple(randint(n1, n2) for _ in range(10))
+# def tpl(n1, n2):
+#     return tuple(randint(n1, n2) for _ in range(10))
+#
+#
+# tl1 = tpl(0, 5)
+# tl2 = tpl(-5, 0)
+#
+# print(tl1)
+# print(tl2)
+# tl3 = tl1 + tl2
+# print(tl3)
+
+# t = (10, 11, [1, 2, 3], ["hello", "world"])
+# print(t, id(t))
+# t[3][0] = "new"
+# print(t, id(t))
+
+# t = (1, 2, 3)
+# # x = t[0]
+# # y = t[1]
+# # z = t[2]
+# x, y, z = t  # распаковка кортежа
+# print(x, y, z)
+
+# def get_user():
+#     name = "Tom"
+#     age = 22
+#     is_married = False
+#     return name, age, is_married
 
 
-tl1 = tpl(0, 5)
-tl2 = tpl(-5, 0)
+# user = get_user()
+# print(user)
+# print(user[0])
+# print(user[1])
+# print(user[2])
 
-print(tl1)
-print(tl2)
-tl3 = tl1 + tl2
-print(tl3)
-print(tl3.count(0))
+# first_name, year, married = user
+# first_name, year, married = get_user()
+# print(first_name)
+# print(year)
+# print(married)
+# t = (1, 2, 3)
+# del t
+# print(t)
+
+
+# lst = [1, 2, 3, 4, 5]
+# print(type(lst))
+# print(lst)
+# tpl = tuple(lst)
+# print(type(tpl))
+# print(tpl)
+# lst2 = list(tpl)
+# print(type(lst2))
+# print(lst2)
+
+# countries = (
+#     ("Германия", 80.2, (("Берлин", 3.236), ("Гамбург", 1.718))),
+#     ("Франция", 66, (("Париж", 2.2), ("Марсель", 1.6)))
+# )
+# print(countries)
+# for country in countries:
+#     country_name, country_population, cities = country
+
+
+# Множество(set)
+
+# s = {}
+# print(s)
+# print(type(s))
+# lst=list(s)
+# print(lst)
+
+# a = set(["banana", "apple", "orange"])
+# print(type(a))
+# print(a)
+
+# s = {i * i * i for i in range(10)}
+# print(s)
+
+# str1 = "я обычная строка"
+# str2 = [4, 5, 4, 6, 2, 9, 11, 3, 4, 2]
+#
+#
+# def to_set(a):
+#     return set(a)
+#
+#
+# print(to_set(str1), len(to_set(str1)))
+# print(to_set(str2), len(to_set(str2)))
+
+# t = {"red", "green", "blue"}
+# for i in t:
+#     print(i)
+
+# lst = ["ab_1", "ac_2", "bc_1", "bc_2"]
+# # a = {i for i in lst if "a" not in i}
+# a = {"A" + i[1:] if i[0] == "a" else "B" + i[1:] for i in lst if i[1] == "c"}
+# print(a)
+
+# users = {"Tom", "Alice", "Bob"}
+# users.add("Ann")
+# print(users)
+# # user = "Rob"
+# # if user in users:
+# #     users.remove(user)
+# #
+# # print(users)
+# # users.discard("Rob")
+# # print(users)
+# # users.pop()
+# # print(users)
+# users.clear()
+# print(users)
+
+# a = {1, 2, 3, 4, 5}
+# b = {0, 4, 5, 6, 3}
+# # c = a | b
+# # c = a<b
+# print(c)
+# s1 = {1, 2}
+# s2 = {3}
+# s3 = {4, 5}
+# s4 = {3, 2, 6}
+# s5 = {6}
+# s6 = {7, 8}
+# s7 = {9, 8}
+# # s = s1.union(s2, s3, s4, s5, s6, s7)
+# s = s1 | s2 | s3 | s4 | s5 |s6 | s7
+#
+# print(s)
+# print(min(s))
+# print(max(s))
+
+
+# str1 = "Hello"
+# str2 = "How are you"
+# s1 = set(str1)
+# s2 = set(str2)
+# # # s = s1 | s2
+# s3 = s1 & s2
+# # print(s3)
+# for i in s3:
+#     print(i, end=" ")
+# a = {0, 1, 2, 3, 4}
+# b = {3, 2, 1}
+# print(a >= b)
+
+# drawing = {"Марина", "Женя", "Света"}
+# music = {"Костя", "Женя", "Илья"}
+# one = drawing ^ music
+# print(one)
+# both = drawing & music
+# print(both)
+# s1= one-both
+
+# frozenset(замороженное множество)
+# s = frozenset([1, 2, 3, 4, 5])
+# print(s)
+# a = frozenset({"hello","world"})
+# print(a)
+
+
+# Словарь(dict)
+
+# s = [1, 2, 3]
+# d = {"one": 1, "two": 2, "three": 3}
+# print(d)
+
+# d = {"one": 1, "two": 2}
+#
+# print(d)
+# print(type(d))
+#
+# d1 = dict(one=1, t=2)
+# print(d1)
+# d = {"one": 1, "two": 2, "three": 3}
+# print(list(d))
+# # lst = ["one", "two", "three"]
+# # print(dict(lst))
+#
+# a = [
+#     ["one", 1],
+#     ["two", 2],
+#     ["three", 3]
+# ]
+# print(a)
+# print(dict(a))
+
+# d = {"one": 45, 0: "text", (1, 2, 3): "Кортеж", 43: [1, 2, 3, 4]}
+# print(d[0][1])
+
+# d = {input("key"): randint(1, 10) for i in range(3)}
+# print(d)
+
+d = {"one": 1, "two": 2, "three": 3}
+print(d)
+d["two"] = 200
+d["one"] += 100
+print(d)
+for key in d:
+    print(key, ":", d[key])
