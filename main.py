@@ -1018,7 +1018,7 @@
 # print(tpl)
 # print(tpl[2])
 # print(tpl[1:3])
-from random import randint
+# from random import randint
 
 # s = tuple(2 ** i for i in range(1, 13))
 # print(s)
@@ -1244,10 +1244,163 @@ from random import randint
 # d = {input("key"): randint(1, 10) for i in range(3)}
 # print(d)
 
-d = {"one": 1, "two": 2, "three": 3}
-print(d)
-d["two"] = 200
-d["one"] += 100
-print(d)
-for key in d:
-    print(key, ":", d[key])
+#
+# # print(d)
+# # d["two"] = 200
+# # d["one"] += 100
+# print(d)
+# del d["two"]
+# print(d)
+# for key in d:
+#     print(key, ":", d[key])
+
+# d = {i: input("Введите элемент словаря: ") for i in range(1, 5)}
+# print(d)
+# de = int(input("Введите ключ удаляемого элемента: "))
+# try:
+#     del d[de]
+# except KeyError:
+#     print("Такого ключа нет!")
+# print(d)
+
+# d = {"one": 1, "two": 2, "three": 3}
+# print(d)
+
+# goods = {
+#     "1": ["Core-i3-4330", 9, 4500],
+#     "2": ["Core i5-4670K", 3, 8500],
+#     "3": ["AMD FX-6300", 6, 3700],
+#     "4": ["Pentium G3220", 8, 2100],
+#     "5": ["Core i5-3450", 5, 6400]
+# }
+#
+# for i in goods:
+#     print(i, ") ", goods[i][0], " - ", goods[i][1], "шт. по ", goods[i][2], "руб.", sep="")
+# while True:
+#     n = input("№: ")
+#     if n != "0":
+#         qty = int(input("Количество:"))
+#         goods[n][1] += qty
+#     else:
+#         break
+# for i in goods:
+#     print(i, ") ", goods[i][0], " - ", goods[i][1], "шт. по ", goods[i][2], "руб.", sep="")
+
+# d = {"a": 1, "b": 2, "c": 3}
+# d2 = d.copy()
+# print("D=", d)
+# print("D2=", d2)
+# d["b"] = 5
+# print("D=", d)
+# print("D2=", d2)
+# d2["e"] = 7
+# print("D=", d)
+# print("D2=", d2)
+
+# # print(d["b"])
+# # value = d.get("b","nokey")
+# # print(value)
+# print(d.keys())  # ключи
+# print(d.values())  # значения
+# print(d.items())  # ключи + значения
+# for k, v in d.items():
+#     print(k, v)
+
+#
+# print(d)
+# # item = d.pop("b")
+# # # item = d.popitem()
+# #
+# # print(item)
+# # d.clear()
+# # item = d.setdefault("e", 100)  #устанавливает значение по умолчанию
+# d.update([("r", 7), ("c1", 6)])  # преобразует словарь
+# d.update({"y": 65, "n": 64})
+# print(d)
+
+# x = {'a': 1, 'b': 2}
+# y = {'b': 3, 'c': 4}
+# # z = {}
+# # z.update(x)
+# # z.update(y)
+# z = x | y
+# print(z)
+
+#
+# d2 = dict()
+# d2['name'] = d1.pop('name')
+# d2['salary'] = d1.pop('salary')
+#
+# print(d1)
+# print(d2)
+
+# d1 = {"name": "Kelly", 'age': 25, 'salary': 8000, 'city': 'New York'}
+#
+# d1['location'] = d1.pop('city')
+# print(d1)
+# a = {
+#
+#     "first": {
+#         1: 'one',
+#         2: 'two',
+#         3: 'three'
+#     },
+#     'second': {
+#         4: "four",
+#         5: "five"
+#     }
+#
+# }
+# print(a)
+#
+# sales = {
+#     "Jhon": {"N": 3056, "S": 8463, "E": 8441, "W": 2594},
+#     "Tom": {"N": 4832, "S": 6786, "E": 4737, "W": 3612},
+#     "Anne": {"N": 5239, "S": 4802, "E": 5820, "W": 1859},
+#     "Fiona": {"N": 3904, "S": 4578, "E": 8441, "W": 2594}
+# }
+# for x in sales:
+#     print(x)
+#     for y in sales[x]:
+#         print("\t", y, ":", sales[x][y], sep="")
+# person = input("Name: ")
+# region = input("Region: ")
+# print(sales[person][region])
+# new_data = int(input("New money: "))
+# sales[person][region] = new_data
+# for x in sales:
+#     print(x)
+#     for y in sales[x]:
+#         print("\t", y, ":", sales[x][y], sep="")
+
+# d = {"a": 1, "b": 2, "c": 3, "d": 4}
+# print({key: value for key, value in d.items()})
+
+# lst = ["one", 1, 2, 3, "two", 10, 20, "three", 15, 36, 60, "four", -20]
+# d = dict()
+# k = ''
+# for i in lst:
+#     if type(i) == str:
+#         k = i
+#         d[k] = []
+#     else:
+#         d[k].append(i)
+# print(lst)
+# print(d)
+
+# zip() объединяет структуры данных
+
+# a = [12, 1, 2, 3]
+# b = ['Dec', 'Jan', 'Feb', 'March']
+# c = [4.0, 8.5, 4.9, 7.3]
+# d = dict(zip(a, b))
+# print(d)
+# f = {k: v for k, v in zip(b, a)}
+# print(f)
+# f = list(zip(a, b,c))
+# print(f)
+dic1 = {'name': 'Igor', 'email': 'igor@mail.com', 'job': 'Consultant'}
+dic2 = {'name': 'Irina', 'email': 'irina@mail.com', 'job': 'Manager'}
+for (k1, v1), (k2, v2) in zip(dic1.items(), dic2.items()):
+    print(k1, '->', v1)
+    print(k2, '->', v2)
