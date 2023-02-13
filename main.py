@@ -1373,7 +1373,7 @@
 #     for y in sales[x]:
 #         print("\t", y, ":", sales[x][y], sep="")
 
-# d = {"a": 1, "b": 2, "c": 3, "d": 4}
+#
 # print({key: value for key, value in d.items()})
 
 # lst = ["one", 1, 2, 3, "two", 10, 20, "three", 15, 36, 60, "four", -20]
@@ -1399,8 +1399,286 @@
 # print(f)
 # f = list(zip(a, b,c))
 # print(f)
-dic1 = {'name': 'Igor', 'email': 'igor@mail.com', 'job': 'Consultant'}
-dic2 = {'name': 'Irina', 'email': 'irina@mail.com', 'job': 'Manager'}
-for (k1, v1), (k2, v2) in zip(dic1.items(), dic2.items()):
-    print(k1, '->', v1)
-    print(k2, '->', v2)
+#
+# dic2 = {'name': 'Irina', 'email': 'irina@mail.com', 'job': 'Manager'}
+# for (k1, v1), (k2, v2) in zip(dic1.items(), dic2.items()):
+#     print(k1, '->', v1)
+#     print(k2, '->', v2)
+
+# d = {"b": 2, "a": 4, "d": 1, 'c': 3}
+# e = list(d.items())
+# print(e)
+# n, m = zip(*e)
+# print(n)
+# print(m)
+# c = list(zip(m, n))
+# print(c)
+# c.sort()
+# print(c)
+# c = {v: k for k, v in c}
+# print(c)
+
+# month = ['January', 'February', 'March']
+# total_sales = [52000, 51000, 48000]
+# prod_cost = [46800, 45900, 43200]
+# for sales, costs, m in zip(total_sales, prod_cost, month):
+#     profit = sales - costs
+#     print("Чистая прибыль в", m, "=", profit)
+
+# one = {'a': 1, 'b': 2, 'c': 55}
+# two = {'c': 3, 'd': 4}
+# print({**one, **two})
+
+# data = ['red', 'green', 'blue']
+# ind = 1
+# for i in data:
+#     print(ind, i)
+#     ind += 1
+# print("")
+# for n, i in enumerate(data, 1):
+#     print(n, i)
+
+# dic1 = {'name': 'Igor', 'email': 'igor@mail.com', 'job': 'Consultant'}
+# for i, v in enumerate(dic1.values(), 1):
+#     print(i, ')', ": ", v, sep='')
+
+# def func(*args):
+#     return (args)
+#
+#
+# print(func(5))
+# print(func(5, 3))
+# print(func(5, 3, 2, 7))
+
+
+# def summa(*params):
+#     res = 0
+#     for i in params:
+#         res += i
+#     return (res)
+#
+#
+# print(summa(1, 2, 3, 4, 5))
+# print(summa(3, 4, 5))
+
+
+# def to_dict(*args):
+#     return {k: k for k in args}
+#
+#
+# print(to_dict(1, 2, 3, 4))
+# print(to_dict("grey", (2, 17), 3.11, -4))
+
+
+# def func(*args):
+#     res = 0
+#     d = 0
+#
+#     for i in args:
+#         res += i
+#         d += 1
+#     sra = res / d
+#
+#
+#     return [x for x in args if x < sra]
+#
+#
+# print(func(1, 2, 3, 4, 5, 6, 7, 8, 9))
+#
+#
+# def func(a, *args):
+#     return (a, args)
+#
+#
+# print(func(3, 5, 6, 7, 2))
+
+# def print_scores(student, *scores):
+#     print('\nStudent name:', student)
+#     for score in scores:
+#         print(score, end=' ')
+#
+# print()
+# print_scores("Jon", 10, 95, 88, 92, 99)
+# print_scores("Mike", 96, 20, 33, 56)
+
+# def func(**kwargs):
+#     return kwargs
+#
+#
+# print(func(a=1, b=2, c=3))
+# d = func(f=5, e=6, m=9)
+# print(d)
+
+# def intro(**data):
+#     for k,v in data.items():
+#         print(k,"is",v)
+#     print()
+#
+#
+#
+# intro(name='Irina',surname='Sharma',age=22)
+# intro(name='Igor',surname='Wood',email='igor@mail.com',age=22,phone=89523454437)
+
+# dic = {'one': 'first'}
+
+
+# def db(**kv):
+#     # global dic
+#     # dic = dic | kv
+#     dic.update(kv)
+#     return dic
+#
+#
+# db(k1=22, k2=31)
+# print(dic)
+# def func(*args):
+#     print(args[0])
+#
+#
+# func(4, 6, 7, 5, 3)
+
+# def func(first, *arg, c=100, **kv):
+#     return first, arg, c, kv
+#
+#
+# print(func(5, 4, 8, 9, 7, a=6, b=2))
+
+# Области видимости(scope)
+
+# name = 'Tom'
+#
+#
+# def hi():
+#     global name, surename
+#     name = 'Sam'
+#     surename = "Jhonson"
+#     print("Hello", name, surename)
+#
+#
+# def bye():
+#     print("Good bye", name)
+#
+#
+# hi()
+# bye()
+# print(name)
+# print(surename)
+
+
+# i = 5
+#
+#
+# def func(arg=i):
+#     print(arg)
+#
+#
+# i = 6
+# func()
+# x = 20
+#
+#
+# def ad(a):
+#     # x = 2
+#
+#     def ad2():
+#         # x = 8
+#         return a + x
+#
+#     return ad2()
+#
+#
+# print(ad(3))
+# import builtins
+# names = dir(builtins)
+# for t in names:
+#     print(t)
+
+# min1 = 23
+# a = [4, 5, 7, 8, 9]
+#
+# print(min1)
+# print(a)
+# print(min(a))
+# print(max(a))
+# print(sum(a) / len(a))
+
+# def outer_func(who):
+#     def inner_func():
+#         print("Hello,", who)
+#
+#     inner_func()
+#
+#
+# outer_func('World!')
+
+# def func1():
+#     a = 6
+#
+#     def func2(b):
+#         a = 4
+#         print("Summa:", a + b)
+#
+#     print('a=', a)
+#
+#     func2(c)
+#
+#
+# func1()
+
+x = 25
+
+
+# t = 0
+
+
+# def fn():
+#     global t
+#     a = 30
+#
+#     def inf():
+#         nonlocal a
+#         a = 35
+#
+#     inf()
+#     t = a
+#
+#
+# fn()
+# z = x + t
+# print(z)
+
+# def f1():
+#     x = 25
+#
+#     def f2():
+#         # x = 33
+#
+#         def f3():
+#             nonlocal x
+#             x = 55
+#
+#         f3()
+#         print('f3:', x)
+#
+#     f2()
+#     print('f2:', x)
+#
+#
+# f1()
+# print('f1:', x)
+
+def outf(a1, a2, b1, b2):
+    a = 0
+    b = 0
+
+    def inf():
+        nonlocal a, b
+        a = a1 + a2
+        b = b1 + b2
+        print(a, b)
+
+    inf()
+    return [a, b]
+
+
+print(outf(2, 3, 5, 7))
