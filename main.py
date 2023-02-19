@@ -1627,7 +1627,6 @@
 
 x = 25
 
-
 # t = 0
 
 
@@ -1667,18 +1666,216 @@ x = 25
 # f1()
 # print('f1:', x)
 
-def outf(a1, a2, b1, b2):
-    a = 0
-    b = 0
+# def outf(a1, a2, b1, b2):
+#     a = 0
+#     b = 0
+#
+#     def inf():
+#         nonlocal a, b
+#         a = a1 + a2
+#         b = b1 + b2
+#         print(a, b)
+#
+#     inf()
+#     return [a, b]
+#
+#
+# print(outf(2, 3, 5, 7))
 
-    def inf():
-        nonlocal a, b
-        a = a1 + a2
-        b = b1 + b2
-        print(a, b)
 
-    inf()
-    return [a, b]
+# Замыкание
+# def outer(n):
+#     def inner(x):
+#         return n + x
+#
+#     return inner
+#
+#
+# add1 = outer(5)
+# print(add1(6))
+# add2 = outer(5)
+# print(add2(18))
+# print(outer(5)(4))
 
 
-print(outf(2, 3, 5, 7))
+# def func(city):
+#     s = 0
+#
+#     def inner():
+#         nonlocal s
+#         s += 1
+#         print(city, s)
+#
+#     return inner
+#
+#
+# res1 = func('Москва')
+# res1()
+# res1()
+# res1()
+# res1()
+# res2 = func('Сочи')
+# res2()
+# res2()
+# res2()
+# res1()
+
+# students = {
+#     'Alice': 98,
+#     'Bob': 67,
+#     'Chris': 85,
+#     'David': 75,
+#     'Fiona': 35,
+#     'Grace': 69
+#
+# }
+#
+#
+# def make(lower, upper):
+#     def student(exam):
+#         return {k: v for k, v in exam.items() if lower <= v < upper}
+#
+#     return student
+#
+#
+# A = make(80, 101)
+# B = make(70, 80)
+# C = make(50, 70)
+# D = make(0, 50)
+# print('A:',A(students))
+# print('B:',B(students))
+# print('C:',C(students))
+# print('D:',D(students))
+
+# Анонимные функции(lambda)
+
+# print((lambda x, y: x + y)(6, 3))
+# print((lambda a, b: a ** 2 + b ** 2)(int(input('a=')), int(input('b='))))
+
+# print((lambda *args: args)(1, 2, 3, 4, 5, 6, 7))
+# c = (lambda x: x * 2, lambda x: x * 3, lambda x: x * 4)
+# for t in c:
+#     print(t('abc_'))
+# def outer(n):
+#     def inner(x):
+#         return n + x
+#
+#     return inner
+#
+#
+# add1 = outer(5)
+# print(add1(6))
+# add2 = outer(5)
+# print(add2(18))
+# print(outer(5)(4))
+#
+#
+# def out1(n):
+#     return lambda x: n + x
+#
+#
+# add2 = out1(5)
+# print(add2(10))
+#
+# out2 = lambda n: lambda x: x + n
+# add3 = out2(5)(6)
+# print(add3)
+
+# print('sum=', (lambda a: lambda b: lambda c: a + b + c)(2)(4)(6))
+# d = {'d': 10, 'b': 15, 'c': 4}
+# a = sorted(d)
+# print(a)
+# lst = list(d.items())
+# print(lst)
+# lst.sort()
+# print(lst)
+# lst.sort(key=lambda i: i[1])
+# print(lst)
+# d = dict(lst)
+# print(d)
+
+# players = [
+#     {'name': 'Антон', 'last name': 'Бирюков', 'rating': 9},
+#     {'name': 'Алексей', 'last name': 'Бодня', 'rating': 10},
+#     {'name': 'Фёдор', 'last name': 'Сидоров', 'rating': 4},
+#     {'name': 'Михаил', 'last name': 'Семёнов', 'rating': 6},
+#
+# ]
+# res = sorted(players, key=lambda item: item['last name'])
+# print(res)
+# res = sorted(players, key=lambda item: item['rating'])
+# print(res)
+# res = sorted(players, key=lambda item: item['rating'],reverse=True)
+# print(res)
+
+
+# a = [lambda x, y: x + y, lambda x, y: x - y, lambda x, y: x * y, lambda x, y: x / y]
+# print(a[2](12, 3))
+
+# a = {'one': lambda x: x - 1, 'two': lambda x: x * (-1), 'three': lambda x: x ** 5}
+# b = [-3, 10, 0, 4]
+# for i in b:
+#     if i < 0:
+#         print(a['two'](i))
+#     elif i > 0:
+#         print(a['one'](i))
+#     else:
+#         print(a['three'](i))
+
+# d= {
+#     1:lambda:print('Monday'),
+#     2:lambda:print('day2'),
+#     3:lambda:print('day3')
+# }
+# d[2]()
+
+# print((lambda a, b: a if a > b else b)(5, 3))
+# print((lambda a, b, c: a if (a < b and a < c) else b if b < c else c)(5, 8, 2))
+
+# map(func,iterables),filter(func,iterables)-ЦИКЛЫ
+
+# def mult(t):
+#     return t * 2
+#
+#
+# lst = [2, 8, 12, -5, 6, -3]
+# #
+# # a = list(map(mult, lst))
+# # print(a)
+#
+# a1 = list(map(lambda t: t * 2, lst))
+# print(a1)
+
+
+# t = (2.88, -1.75, 100.55)
+# t2 = tuple(map(int, t))
+# print(t2)
+# areas = [3.76748, 45.5425263, 65.6345637, 4.626277, 7.736356436, 5.64733]
+# print(list(map(round, areas, range(1, 7))))
+
+# st = ['a', 'b', 'c', 'd', 'e']
+# num = [1, 2, 3, 4, 5]
+# print(list(map(lambda x, y: (x, y), st, num)))
+# l1 = [1, 2, 3]
+# l2 = [4, 5, 6]
+# l3 = list(map(lambda a, b: (a ** b), l1, l2))
+# print(l3)
+
+# t = ('abcd', 'abc', 'cdrfg', 'def', 'ghi')
+# t2 = tuple(filter(lambda s: len(s) == 3, t))
+# print(t)
+# print(t2)
+#
+# b = [66, 34, 89, 23, 88, 35, 28, 46, 98]
+# res = list(filter(lambda s: s > 75, b))
+# print(b)
+# print(res)
+
+# from random import randint
+#
+# l = [randint(1, 40) for i in range(10)]
+# print(l)
+# l2 = list(filter(lambda a: 10 <= a <= 20,l))
+# print(l2)
+
+print(list(map(lambda a: a ** 2, filter(lambda a: a % 2, range(10)))))
