@@ -11,7 +11,7 @@ def change_to_str(s, c_old, c_new):
     return s2
 
 
-str1 = 'Я изучаю Nython.Мне нравится Nython.Nython очень интересный язык прогаммирования.'
+str1 = 'Я изучаю Nython. Мне нравится Nython. Nython очень интересный язык программирования.'
 print('str1:', str1)
 str2 = change_to_str(str1, 'N', 'P')
 print('str2:', str2)
