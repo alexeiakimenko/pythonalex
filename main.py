@@ -1878,4 +1878,231 @@ x = 25
 # l2 = list(filter(lambda a: 10 <= a <= 20,l))
 # print(l2)
 
-print(list(map(lambda a: a ** 2, filter(lambda a: a % 2, range(10)))))
+# print(list(map(lambda a: a ** 2, filter(lambda a: a % 2, range(10)))))
+
+# Декораторы
+
+# def h():
+#
+#
+#
+# def sfunc(f):
+#     print('Hello I am super func!')
+#     print(f())
+#
+#
+# sfunc(h)
+
+
+# def hello():
+#     return 'Hello I am func "hello"'
+#
+#
+# test = hello
+# print(type(test))
+# print(test())
+
+# def my_decorator(func):
+#     def funcwrap():
+#         print('Код до функции')
+#         func()
+#         print('Код после функции')
+#     return funcwrap
+#
+#
+# @my_decorator
+# def functest():
+#     print('Тело функции "funct"')
+# #
+# # # test = my_decorator(funct)
+# # # test()
+# functest()
+#
+# def bold(fn):
+#     def wrap():
+#         return "<b>" + fn() + "</b>"
+#
+#     return wrap
+#
+#
+# def italic(fn):
+#     def wrap():
+#         return "<i>" + fn() + "</i>"
+#
+#     return wrap
+#
+#
+# @bold
+# @italic
+#
+# def hello():
+#     return 'text'
+
+
+# print(hello())
+# def cnt(fn):
+#     count = 0
+#
+#     def wrap():
+#         nonlocal count
+#         count += 1
+#         fn()
+#         print('Вызов функции:', count)
+#
+#     return wrap
+#
+#
+# @cnt
+# def hello():
+#     print('Hello')
+
+
+# def args_decorator(fn):
+#     def wrap(arg1, arg2):
+#         print(arg1, arg2)
+#         fn(arg1, arg2)
+#
+#     return wrap
+#
+#
+# @args_decorator
+# def print_full_name(name, surname):
+#     print('Меня зовут', name, surname)
+#
+#
+# print_full_name('Ирина', 'Леонова')
+
+# def args_decorator(fn):
+#     def wrap(*arg1, **arg2):
+#         print(arg1, arg2)
+#         fn(*arg1, **arg2)
+#
+#     return wrap
+#
+#
+# @args_decorator
+# def print_full_name(a, b, c, study1='Python'):
+#     print(a, b, c, 'изучают', study1, '\n')
+#
+#
+# print_full_name('Ирина', 'Борис', 'Svetlana')
+# print_full_name('Jhon', 'mike', 'Nick')
+# def decor(arg1, arg2):
+#     def args_dec(fn):
+#         def wrap(x, y):
+#             print(arg1, x, arg2, y, '=', end=' ')
+#             fn(x, y)
+#
+#         return wrap
+#
+#     return args_dec
+#
+#
+# @decor("Сумма", '+')
+# def sum(a, b):
+#     print(a + b)
+#
+#
+# @decor("Разность", '-')
+# def sub(a, b):
+#     print(a - b)
+#
+#
+# sum(float(input('x=')), float(input('y=')))
+# sub(float(input('x=')), float(input('y=')))
+
+# print(int('100', 2))
+# print(int('100', 8))
+# print(int('100', 10))
+# print(int('100', 16))
+# print(0c01001)
+# print(0x23)
+# q = 'Pyt'
+# w = 'hon'
+# e = q + w
+# print(e)
+# print(e*4)
+# print("Py" in e)
+# s = 'Hello'
+# print(s[1])
+# print(s[-3])
+# print(s[1:4])
+# print(s[::-1])
+
+# str2
+# print(s[3])
+# s[3] = 't'
+# print(s)
+# s = s[:3] + 't' + s[4:]
+# print(s)
+# def change_to_str(s, c_old, c_new):
+#     s2 = ""
+#     i = 0
+#     while i < len(s):
+#         if s[i] == c_old:
+#
+#             s2 += c_new
+#         else:
+#             s2 += s[i]
+#         i += 1
+#     return s2
+#
+#
+# str1 = 'Я изучаю Nython.Мне нравится Nython.Nython очень интересный язык прогаммирования.'
+# print('str1:', str1)
+# str2 = change_to_str(str1, 'N', 'P')
+# print('str2:', str2)
+
+# print('Hello')
+# print(u'Hello')
+# print(r'Hello'+'\\')
+# name = "Dmitry"
+# age = 25
+# print('My name is', name, "age", age)
+# print(f'My name is {name}.Age: {age} old.')
+
+# from math import pi
+#
+# print(f'Число PI:{round(pi, 3)}')
+# print(f'Число PI:{pi:.3f}')
+# x = 10
+# y = 5
+# print(f'{x =},{y =}')
+# print(f'{x} x {y} / 2 ={x * y / 2}')
+# a = 74
+# print(f'{{{a}}}')
+# dir_name = 'my_doc'
+# file_name = 'data.txt'
+# print(fr'home\{dir_name}\{file_name}')
+# s = ""
+# s1 = ''
+# s2 = """Много
+# строк"""
+# s3 = ''''''
+# print(s2)
+
+# def square(n):
+#     '''Принимает число n,возвращает квадрат числа n'''
+#     return n ** 2
+#
+#
+# print(square(5))
+# print(square.__doc__)
+from math import pi
+
+
+def sc(r, h):
+    """
+    Вычисляет площадь цилиндра.
+    Вычисляет площадь цилиндра на основании высоты т радиуса основания.
+
+    :param r: Положительное число, радиус основания.
+    :param h: Положительное число, высота цилиндра.
+    :return: Площадь поверхности цилиндра.
+    """
+
+    return (2 * pi * r * h) + (2 * pi * r ** 2)
+
+
+print(sc(5, 8))
+print(sc.__doc__)
