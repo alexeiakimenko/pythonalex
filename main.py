@@ -2048,7 +2048,7 @@ x = 25
 #     return s2
 #
 #
-# str1 = 'Я изучаю Nython.Мне нравится Nython.Nython очень интересный язык прогаммирования.'
+#
 # print('str1:', str1)
 # str2 = change_to_str(str1, 'N', 'P')
 # print('str2:', str2)
@@ -2088,21 +2088,151 @@ x = 25
 #
 # print(square(5))
 # print(square.__doc__)
-from math import pi
+# from math import pi
+#
+#
+# def sc(r, h):
+#     """
+#     Вычисляет площадь цилиндра.
+#     Вычисляет площадь цилиндра на основании высоты т радиуса основания.
+#
+#     :param r: Положительное число, радиус основания.
+#     :param h: Положительное число, высота цилиндра.
+#     :return: Площадь поверхности цилиндра.
+#     """
+#
+#     return (2 * pi * r * h) + (2 * pi * r ** 2)
+#
+#
+# print(sc(5, 8))
+# print(sc.__doc__)
 
 
-def sc(r, h):
-    """
-    Вычисляет площадь цилиндра.
-    Вычисляет площадь цилиндра на основании высоты т радиуса основания.
+# print(ord('a'))
+#
+# while True:
+# my_str = 'Test string for me '
+# arr = [ord(i) for i in my_str]
+# print('ASCII коды:', arr)
+# arr1 = sum(arr) / len(arr)
+# arr1 = [round(arr1)] + arr
+# print('Среднее арифметическое:', arr1)
+# arr1 += [ord(x) for x in input('->')[:3] if ord(x) not in arr]
+# print(arr1)
+# print(arr1.count(arr1[-1]) - 1)
+# arr1.sort(reverse=True)
+# print(arr1)
+# print(chr(97))
+# print(chr(1008))
+# i = 97
+# while i <= 122:
+#     print(f'{chr(i)} {i}',end=' ')
+#     i += 1
 
-    :param r: Положительное число, радиус основания.
-    :param h: Положительное число, высота цилиндра.
-    :return: Площадь поверхности цилиндра.
-    """
-
-    return (2 * pi * r * h) + (2 * pi * r ** 2)
+# print('apple' == 'Apple')
+# print('apple' > 'Apple')
 
 
-print(sc(5, 8))
-print(sc.__doc__)
+# from random import randint
+#
+# short = 7
+# long = 10
+# min_ASCII = 33
+# max_ASCII = 126
+#
+#
+# def random_password():
+#     rand_len = randint(short, long)
+#     res = ""
+#     for i in range(rand_len):
+#         rand_char = chr(randint(min_ASCII, max_ASCII))
+#         res += rand_char
+#
+#     return (res)
+#
+#
+# print('Случайный пароль:', random_password())
+
+# print(dir(str))
+
+# print(s.capitalize())
+# print(s.lower())
+# print(s.upper())
+# print(s.swapcase())
+
+# print(s.lower().count('he'))  # подсчёт вхождений подстроки
+
+# print(s.find('h'))  # возвращает первый индекс соответствующий началу подстроки -1 если нет
+# print(s.rfind('h'))  # возвращает первый индекс соответствующий началу подстроки -1 если нет
+# print(s.index('o'))  # возвращает первый индекс соответствующий началу подстроки ValueError если нет
+# print(s.rindex('o'))  # возвращает первый индекс соответствующий началу подстроки ValueError если нет
+
+# s = input('->')
+# ind = s.find(' ')
+# print(ind)
+# s = s[ind + 1:] + ' ' + s[:ind]
+# print(s)
+
+
+# s1 = 'ab12c59p7dq'
+# digits = []
+# for symbol in s1:
+#     if '0123456789'.find(symbol) != -1:
+#         digits.append(int(symbol))
+
+# print(digits)
+
+
+# st = "the original words and form a written or printed work"
+# ch = 'o'
+# if st.count(ch) == 1:
+#     print(st.find(ch))
+# elif st.count(ch) >= 2:
+#     print(st.find(ch), st.rfind(ch))
+
+# s = 'hello,WORLD!I am learning Python.'
+# print(s.endswith('on.'))
+# print(s.startswith('he'))
+
+# print('abc123'.isalnum())  # определяет состоит ли строка из букв и цифр
+# print('abcADF'.isalpha())  # только буквы
+# print('123'.isdigit())  #только цифры
+# print('abc'.islower())  # в нижнем регистре
+# print('SDF'.isupper())  # в верхнем регистре
+# print('py'.center(10, '*'))  # выравнивает по центру
+# print('    py'.lstrip())
+# print('py     '.rstrip())
+# print('    py    '.strip())
+
+# print('http://www.python.org'.lstrip('/:pths'))
+
+
+# str1 = 'Я изучаю Nython.Мне нравится Nython.Nython очень интересный язык прогаммирования.'
+# print(str1)
+# print(str1.replace('Nython', 'Python', 2))
+# str1 = str1.replace('Nython', 'Python')
+# print(str1)
+
+# s = 'Заменить в этой строке все буквы "о" на букву "О", кроме первого и последнего вхождения.'
+# print(s)
+# a = s[:s.find('о') + 1]
+# b = s[s.rfind('о'):]
+# c = s[s.find('о') + 1:s.rfind('о')]
+# s = a + c.replace('о', 'О') + b
+# print(s)
+
+
+# s = '-'
+# st = ('a', 'b', 'c')
+# print(s.join(st))
+# print('..'.join(st))
+# print('**'.join(['1', '2', '3']))
+# print('*'.join('Alex'))
+# print('A*l*e*x'.split('*'))
+# print('www.python.org.ru'.split('.', 2))
+# print('alex akim'.split())
+# a = input('->').split(',')
+# print(a)
+
+s = input("->").split()
+print(f'{s[0].capitalize()} {s[1][0].upper()}.{s[2][0].upper()}.')
