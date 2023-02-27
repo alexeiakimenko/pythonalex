@@ -2234,5 +2234,93 @@ x = 25
 # a = input('->').split(',')
 # print(a)
 
-s = input("->").split()
-print(f'{s[0].capitalize()} {s[1][0].upper()}.{s[2][0].upper()}.')
+# s = input("->").split()
+# print(f'{s[0].capitalize()} {s[1][0].upper()}.{s[2][0].upper()}.')
+
+
+# Регулярные выражения
+import re
+
+# # reg = '[12][0-9][0-9][0-9]'
+# # reg = '[A-Za-z]'
+# # reg = '[A-Z 0-9.\[\]-]'
+# reg =r'[!]'
+# print(re.findall(reg, s))
+# print(ord('Я'))
+# print(ord('а'))
+# print(chr(96))
+
+# s = 'Час в 24-формате от 00 до 23.2021-06-15Т21:45.Минуты,в диапазоне 00 до 59.2021-06-15Т01:09'
+# reg = r'[0-2][0-9]:[0-5][0-9]'
+# print(re.findall(reg, s))
+
+#
+# reg = r'20+'
+# print(re.findall(reg, s))
+#
+# d = 'Цифры : 7, +17, -42, 0012, 0.3'
+# print(re.findall(r'[+-]?\d+[.\d]*', d))
+# s = '06-03-1987 #Дата рождения'
+# print('Дата рождения:', re.sub(r'-', '.', re.sub(r'#.*', '', s)))
+
+# s = 'author=Пушкин  А.С.; title = Евгений Онегин; price =200; year= 1831 '
+#
+# # reg = r'\w+\s*=\s*\w+[\s\w.]*'
+# reg = r'\w+\s*=[^;]+'
+# print(re.findall(reg, s))
+
+
+# s = '12 сентября 2021 года 4567489495005'
+# reg = r'\d{1,4}'
+# print(re.findall(reg, s))
+# s = '+7 499 456-46-78,+74994564578,+7 (499) 456 45 78,74994564578'
+# reg=r'\+?7\d{10}'
+# print(re.findall(reg, s))
+
+# reg = r'\w+\.$'
+# print(re.findall(reg, s))
+
+# def validate_login(name):
+#
+#     return re.findall(r'^[A-Za-z0-9_-]{3,16}$',name)
+#
+#
+# print(validate_login('Python_master'))
+# print(validate_login('Pyt'))
+# print(validate_login('Pyt5'))
+# print(validate_login('Pyt5$$$'))
+
+
+# print(re.findall(r'\w+', '10 +й'))
+# print(re.findall(r'\w+', '10 +й', flags=re.ASCII))
+# print(re.findall(r'\w+', '10 +й', flags=re.A))
+# print(re.findall(r'\w+', '10 +й', re.A))
+# text = "Hello world"
+# print(re.findall(r'\w\+', text,re.DEBUG))
+
+# s = 'Я ищу совпадения в 2023году.И я их найду в два счё_та.'
+# reg = r'я'
+# print(re.findall(reg,s,re.IGNORECASE))
+# text = '''
+# one
+# two
+# '''
+# # print(re.findall(r'one.\w', text))
+# # print(re.findall(r'one.\w+', text, re.DOTALL))
+# # print(re.findall(r'one.\w+', text, re.S))
+# print(re.findall('one$', text))
+# print(re.findall('one$', text, re.MULTILINE))
+# print(re.findall('one$', text, re.M))
+
+# print(re.findall("""
+# [a-z.-]+       #part1
+# @              #@
+# [a-z.-]+"""    #part2
+#                  ,'test@mail.ru',re.VERBOSE))
+# text = ''''
+# Python
+# python
+# PYTHON
+# '''
+# reg = r'(?im)^python'
+# print(re.findall(reg, text))
