@@ -2447,26 +2447,187 @@ text = """
 #
 # print(to_str(2546547,11))
 
-names = ['Adam', ['Bob', ['Chet', 'Cat'], 'Bard', 'Bert'], 'Alex', ['Bea', 'Bill'], 'Ann']
+# names = ['Adam', ['Bob', ['Chet', 'Cat'], 'Bard', 'Bert'], 'Alex', ['Bea', 'Bill'], 'Ann']
+#
+#
+# # print(len(names))
+# # print(names[0])
+# # print(isinstance(names[0], list))
+# # print(names[1][0])
+# # print(isinstance(names[1][0], list))
+# # print(names[1][1])
+# # print(isinstance(names[1][1], list))
+# # print(names[1][1][0])
+# # print(isinstance(names[1][1][0], list))
+# def count_items(item_list):
+#     count = 0
+#     for item in item_list:
+#         if isinstance(item, list):
+#             count += count_items(item)
+#         else:
+#             count += 1
+#     return count
+#
+#
+# print(count_items(names))
+
+# def remove(text):
+#     if not text:
+#         return ''
+#     if text[0] == '\t' or text[0] == ' ':
+#         return remove(text[1:])
+#     else:
+#         return text[0]+remove(text[1:])
+#
+#
+#
+# print(remove('       Hello\t,World !'))
+
+# Файлы
+
+# f = open(r'E:\учёба\python\text.txt')
+# print(f)
+# print(*f)
+# d = open('text.txt', mode='r')
+# print(d)
+# print(*d)
+# print(d.mode)
+# print(d.encoding)
+# print(d.name)
+# print(d.closed)
+# print(f.name)
+# f.close()
+# d.close()
+# print(d.closed)
+
+# f = open('text.txt')
+# print(f.read(3))
+# print(f.read())
+# f.close()
+
+# f = open('test.txt')
+#
+# print(f.readline())
+# print(f.readline(8))
+# print(f.readline())
+# print(f.readline())
+# f.close()
+
+# f = open('test.txt')
+#
+# print(f.readlines())
+#
+# f.close()
+
+# f = open('test.txt')
+# kol = 0
+# for line in f:
+#     print(line)
+#     kol += 1
+# print(kol)
+#
+# f.close()
 
 
-# print(len(names))
-# print(names[0])
-# print(isinstance(names[0], list))
-# print(names[1][0])
-# print(isinstance(names[1][0], list))
-# print(names[1][1])
-# print(isinstance(names[1][1], list))
-# print(names[1][1][0])
-# print(isinstance(names[1][1][0], list))
-def count_items(item_list):
-    count = 0
-    for item in item_list:
-        if isinstance(item, list):
-            count += count_items(item)
-        else:
-            count += 1
-    return count
+# f = open('xyz.txt', 'w')
+# f.write('Hello\nWorld!\n')
+# f.close()
+# f = open('xyz.txt', 'a')
+# f.write('New text')
+# line = ['This is line1', 'This is line 2']
+# f.writelines(line)
+# f.close()
+
+# f = open('xyz.txt', 'w')
+# lst = [i ** 5 for i in range(1, 20)]
+# print(lst)
+# for index in lst:
+#     f.write(str(index) + '\n')
+# f.close()
+# f = open('text2.txt', 'w')
+# f.write('Заменить строку в текстовом файле;\n')
+# f.write('Изменить строку в списке;\n')
+# f.write('Записать список в файл;\n')
+# f.close()
+# f = open('text2.txt', 'r')
+# lst = f.readlines()
+# while True:
+#     ind = int(input('->'))
+#     if 1 <= ind <= 3:
+#         break
+#     else:
+#         print("Заново")
+#
+# print(lst)
+# f.close()
+# f = open('text2.txt', 'w')
+# lst[ind - 1] = 'pos = ' + str(ind)
+# f.writelines(lst)
+# f.close()
+
+# f = open('text.txt','w')
+# f.write('Hello!!!')
+# f.close()
+
+# f = open('text.txt', 'r')
+# print(f.read(3))
+# print(f.tell())  # Возвращает позицию курсора в файле.
+# print(f.seek(1))  # Переместил курсор в заданную позицию.
+# print(f.read())
+# f.close()
+
+# f = open('text1.txt', 'a+')
+# print(f.write('\nI am learning Python.'))
+# print(f.seek(3))
+# print(f.write('-new string-'))
+# print(f.tell())
+# f.close()
+# with open('text.txt', 'w+') as f:
+#     print(f.write('0123456789'))
+# with open('text.txt', 'r') as f:
+#     for line in f:
+#         print(line)
+# def get_line(lt):
+#     lt = list(map(str(lt)))
+#     return " ".join(lt)
 
 
-print(count_items(names))
+# file_name = 'res.txt'
+# # lst = [4.5, 2.8, 3.9, 1.0, 0.3, 4.33, 7.777]
+# # with open(file_name, 'w') as f:
+# #     for i in lst:
+# #         f.write(str(i)+' ')
+# # print('Done!')
+#
+# with open(file_name, 'r') as f:
+#     rf = f.read().split(' ')
+#     print(rf, len(rf))
+#     print(sum(map(float, rf[:-1])))
+# def longest_word(file):
+#     with open(file, encoding='UTF-8') as text:
+#         w = text.read().split()
+#         max_length = len(max(w, key=len))
+#         res = [word for word in w if len(word) == max_length]
+#         if len(res) == 1:
+#             return res[0]
+#
+#         return res
+#
+#
+# print(longest_word('test.txt'))
+
+# text = "Строка№1\nСтрока№2\nСтрока№3\nСтрока№4\nСтрока№5\nСтрока№6\nСтрока№7\nСтрока№8\nСтрока№9\nСтрока№10\n"
+#
+# with open('one.txt', 'w') as f:
+#     f.write(text)
+
+# read_file = 'one.txt'
+# write_file = "two.txt"
+# with open(read_file, 'r') as fr, open(write_file, 'w') as fw:
+#     for line in fr:
+#         line = line.replace('Строка', 'Линия - ')
+#         fw.write(line)
+with open('one.txt', 'r') as f1, open('two.txt', 'r') as f2, open('three.txt', 'w') as f3:
+    for ln1, ln2 in zip(f1, f2):
+        f3.write(ln1)
+        f3.write(ln2)
