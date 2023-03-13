@@ -2746,13 +2746,174 @@ text = """
 # print(p2.y)
 # print(p1.__dict__)
 
+# class Point:
+#     x = 4
+#     y = 6
+#
+#     def set_coord(self, x, y):
+#         self.x = x
+#         self.y = y
+#         print(x + y)
+#
+#
+# p1 = Point()
+# p1.set_coord(5, 10)
+# p2 = Point()
+# p2.set_coord(20, 40)
+# Point.set_coord(p1, 70, 90)
+class Human:
+    name = 'name'
+    birthday = '00.00.0000'
+    phone = '00-00-00'
+    country = 'country'
+    city = 'city'
+    adress = 'street, house'
+
+
+#     def print_info(self):
+#         print('Персональные данные'.center(40, '*'))
+#         print(f'Имя: {self.name}')
+#         print(f'Дата рождения: {self.birthday}')
+#         print(f'Номер телефона: {self.phone}')
+#         print(f'Страна: {self.country}')
+#         print(f'Город: {self.city}')
+#         print(f'Домашний адрес: {self.adress}')
+#         print('=' * 40)
+#
+#     def input_info(self, firstname, birthday, phone, country, city, address):
+#         self.name = firstname
+#         self.birthday = birthday
+#         self.phone = phone
+#         self.country = country
+#         self.city = city
+#         self.adress = address
+#     def get_city(self):
+#         return self.city
+#
+# h1 = Human()
+# h1.print_info()
+# h1.input_info('Юля', '23.05.1986', '45-46-98', 'Россия', 'Москва', 'Чистопрудный 2-97')
+# h1.print_info()
+# h1.city='Саратов'
+# h1.print_info()
+# print(h1. get_city())
+# class Person:
+#     skill = 10  # статическое свойство
+#
+#     def __init__(self, name, surname):
+#         self.name = name  # динамическое свойство
+#         self.surname = surname
+#
+#     def print_info(self):
+#         print("Данные сотрудника:", self.name, self.surname)
+#
+#     def add_skill(self, k):
+#         self.skill += k
+#         print('Квалификаация сотрудника:', self.skill)
+#         print('=' * 50)
+#
+#
+# p1 = Person(input('name'), input('surname'))
+# p1.print_info()
+# p1.add_skill(3)
+#
+# p2 = Person('Anna', 'Dolgih')
+# p2.print_info()
+# p2.add_skill(2)
+
+
+#     def __del__(self):
+#         print('Удаление экземпляра.')
+#
+#
+#
+# print(p1.__dict__)
+
+# class Point:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+
+
+#     def set_coord(self, x, y):
+#         if isinstance(x, int) and isinstance(y, int):
+#             self.x = x
+#             self.y = y
+#
+#         print(self.x,self.y)
+#
+#
+# p1 = Point(5, 10)
+# p1.set_coord(45, 64)
+
+# class Point:
+#     count = 0
+
+#     def __init__(self, x=1, y=1):
+#         self.x = x
+#         self.y = y
+#         Point.count += 1
+#
+#
+# p1 = Point()
+# print('p1', p1.count)
+# print('Point', Point.count)
+# p2 = Point()
+# print('p2', p2.count)
+# print('Point', Point.count)
+# p3 = Point()
+# print('p3', p3.count)
+# print('Point', Point.count)
+
+
+# class Robot:
+#     k = 0
+#
+#     def __init__(self, name):
+#         self.name = name
+#         print("Инициализация робота:", self.name)
+#
+#     def __del__(self):
+#         print(self.name, 'выключается.')
+#         Robot.k -= 1
+#         print('Численность роботов', Robot.k)
+#
+#     def say_hi(self):
+#         print('Приветствую!Меня зовут', self.name)
+#         Robot.k += 1
+#
+#
+# droid1 = Robot('R2-D2')
+# droid1.say_hi()
+# print('Численность роботов', Robot.k)
+# print('*' * 50)
+# droid2 = Robot('C-3PO')
+# droid2.say_hi()
+# print('Численность роботов', Robot.k)
+
+
 class Point:
-    x = 4
-    y = 6
+    def __init__(self, x, y):
+        self.__x = x
+        self.__y = y
 
-    def set_coord(self):
-        print(p1.x + p1.y)
+    def __cvalue(z):
+        if isinstance(z, int) or isinstance(z, float):
+            return True
+        return False
+
+    def set_coord(self, x, y):
+        if Point.__cvalue(x) and Point.__cvalue(y):
+            self.__x = x
+            self.__y = y
+
+    def get_coord(self):
+        return self.__x, self.__y
 
 
-p1 = Point()
-p1.set_coord()
+p1 = Point(5, 10)
+print(p1.get_coord())
+# print(p1.x, p1.y)
+# p1.x = 100
+# p1.y = 'abc'
+# print(p1.x, p1.y)
