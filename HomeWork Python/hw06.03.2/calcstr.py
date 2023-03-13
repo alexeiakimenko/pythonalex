@@ -10,7 +10,7 @@ while lines < len(lst):
     symbol = len(lst[lines])
     for i in vlt:
 
-        if 1040 <= ord(i[0]) <= 1103 or ord(i[0]) == 1025 or ord(i) == 1105:
+        if 1040 <= ord(i[0]) <= 1103 or ord(i[0]) == 1025 or ord(i[0]) == 1105:
             word += 1
 
     print(f'{lines + 1} строка : слов - {word} ; символов {symbol - 1}')

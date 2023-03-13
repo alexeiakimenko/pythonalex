@@ -2239,7 +2239,7 @@ x = 25
 
 
 # Регулярные выражения
-import re
+# import re
 
 # # reg = '[12][0-9][0-9][0-9]'
 # # reg = '[A-Za-z]'
@@ -2380,6 +2380,7 @@ text = """
 Уфа
 Казань
 """
+
 
 # count = 0
 #
@@ -2627,7 +2628,131 @@ text = """
 #     for line in fr:
 #         line = line.replace('Строка', 'Линия - ')
 #         fw.write(line)
-with open('one.txt', 'r') as f1, open('two.txt', 'r') as f2, open('three.txt', 'w') as f3:
-    for ln1, ln2 in zip(f1, f2):
-        f3.write(ln1)
-        f3.write(ln2)
+# with open('one.txt', 'r') as f1, open('two.txt', 'r') as f2, open('three.txt', 'w') as f3:
+#     for ln1, ln2 in zip(f1, f2):
+#         f3.write(ln1)
+#         f3.write(ln2)
+
+# Модули OS и OS.PATH
+
+# import os
+# import os.path
+
+
+# print("Текущая директория:", os.getcwd()) # возвращает путь к текущей директории
+# print(os.listdir()) # возвращает файлы и папки из текущей директории
+# print(os.listdir('..'))
+# os.mkdir("folder")  # создание папки
+# os.makedirs('nested1/nested2/nested3') # создание папок
+# os.rmdir('folder') # удаление пустой папки
+# os.remove('xyz.txt') # удаляет файл
+# os.rename('two.txt','new.txt') # переименование файлов и папок
+# os.rename('new.txt', 'directory/two.txt') # пермещает файл по заданному пути который уже существует
+# os.rename('three.txt', 'directory/three.txt')
+# os.renames('text2.txt', 'test/text2/txt') # перемещает файл в создаваемые папки
+
+
+# for root, dirs, files in os.walk('\учёба'):
+#     print('Root:', root)
+#     print('Sub dirs:', dirs)
+#     print('Files:', files)
+
+# def remove_empty_dirs(root_tree):
+#     print(f'Удаление пустых директорий в ветке {root_tree}.')
+#     print('-' * 50)
+#     for root, dirs, file in os.walk(root_tree):
+#         if not os.listdir(root):
+#             os.rmdir(root)
+#             print(f'Директория {root} удалена.')
+#     print('-' * 50)
+#
+#
+# remove_empty_dirs('nested1')
+
+# print(os.path.split(r'E:\учёба\python\test\text2\txt2.txt'))  # разбивает путь на кортеж
+#
+# print(os.path.dirname(r'E:\учёба\python\test\text2\txt2.txt'))
+# print(os.path.basename(r'E:\учёба\python\test\text2\txt2.txt'))
+
+
+# print(os.path.join('E:\учёба', 'pyton', 'test', 'text2', 'txt2.txt'))
+
+
+# dirs = [r'Work\F1', r'Work\F2\F21']
+# for d in dirs:
+#     os.makedirs(d)
+# files = {
+#     'Work': ["w.txt"],
+#     r"Work\F1": ["f11.txt", 'f12.txt', 'f13.txt'],
+#     r'Work\F2\F21': ['f211.txt', 'f212.txt']
+# }
+# for d, f in files.items():
+#     for file in f:
+#         file_path = os.path.join(d, file)
+#         print(file_path)
+#         open(file_path, 'w').close()
+# files_width_text = [r'Work\w.txt', r'Work\F1\f12.txt', r'Work\F2\F21\f211.txt', r'Work\F2\F21\f212.txt']
+# for file in files_width_text:
+#     with open(file, 'w') as f:
+#         f.write(f'Некоторый текст для документа:{file}.')
+
+# def print_tree(root, topdown):
+#     print(f'Обход {root} {"сверху вниз." if topdown else "снизу вверх."}')
+#     for r, d, f in os.walk(root, topdown):
+#         print(r)
+#         print(d)
+#         print(f)
+#     print('*' * 50)
+#
+#
+# print_tree('Work', False)
+# print_tree('Work', True)
+
+# print(os.path.exists(r'E:\учёба\python\test\text2\text2.txt')) # возвращает True если файл существует
+# import time
+#
+# p = r'E:\учёба\python\test\text2\txt2.txt'
+# # print(os.path.getsize(p))  # возвращает размер файла
+# # print(os.path.getmtime(p))  # возвращает время последнего изменения файла
+# # print(os.path.getatime(p))  # возвращает время последнего доступа к файлу
+# # print(os.path.getctime(p))  # возвращает время создания файла
+# #
+# # atime = os.path.getctime(p)
+# # print(time.strftime('%d.%m.%Y, %H:%M:%S',time.localtime(atime)))
+#
+# print(os.path.isdir(p))  # возвращает True,если путь является директорией
+# print(os.path.isfile(p)) # возвращает True,если путь является файлом
+
+
+# print(type(p1))
+# print(p1.x)
+# print(Point.__doc__)
+# print(dir(Point))
+# class Point:
+#     """Координаты точки"""
+#     x = 1
+#     y = 2
+
+
+# p1 = Point()
+# Point.x = 100
+# p1.x = 30
+# p1.y = 87
+# p1.z = 13
+# print(p1.x)
+# print(p1.y)
+# p2 = Point()
+# print(p2.x)
+# print(p2.y)
+# print(p1.__dict__)
+
+class Point:
+    x = 4
+    y = 6
+
+    def set_coord(self):
+        print(p1.x + p1.y)
+
+
+p1 = Point()
+p1.set_coord()
